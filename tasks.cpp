@@ -37,36 +37,63 @@ void checkerboard(int width,int height){
   int i, c;
 
 
-   string result;
+   string result = " ";
+   string result2 = " ";
 
-  for (i = 1; i <= width; i++){
+  for (i = 0; i < width; i++){
 
-        result = result + "*";
+    if (i %  2 == 0){
 
+      result += " ";
+
+
+    }
+
+    else if (i % 2 == 1){
+      result += "*";
+
+
+    }
   }
 
-  for (c = 1; c <= height; c++){
+
+  for (c = 0; c < width; c++){
 
     if (c %  2 == 0){
 
-       cout <<" " << result <<  endl;
+      result2 += "*";
 
 
     }
-
-    else {
-
-       cout <<result <<  endl;
-
+    else if (c % 2 == 1){
+      result2 += " ";
 
     }
+  }
+
+    for (i = 0; i < height; i++){
+
+      if (i %  2 == 0){
+
+        cout << result2 << endl;
+
+      }
+
+      if (i %  2 == 1){
+
+      cout << result << endl;
+
+    }
+
 
   }
 
 
-
-
 }
+
+
+
+
 
 
 void cross(int a){
@@ -172,6 +199,7 @@ void trapezoid (int width, int height){
       return;
    }
 
+
    stars = width;
    spaces = 0;
 
@@ -202,9 +230,8 @@ void trapezoid (int width, int height){
 
    cout<<endl;
 
-
-      }
     }
+  }
 
 
 

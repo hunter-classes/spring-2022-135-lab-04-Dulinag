@@ -12,9 +12,9 @@ box(4,5);
 cout<<endl;
 cout << "\n------------------\n";
 
-cout << "checkerboard(7,5): "<< endl;
+cout << "checkerboard(11,6): "<< endl;
 cout<<endl;
-checkerboard(7,5);
+checkerboard(11,6);
 
 cout<<endl;
  cout << "\n------------------\n";
@@ -42,7 +42,7 @@ cout<<endl;
 
 cout << "trapezoid(12,7): "<< endl;
 cout<<endl;
-trapezoid(5,3);
+trapezoid(12,7);
 cout<<endl;
 cout<<"\n";
   cout << "\n------------------\n";
