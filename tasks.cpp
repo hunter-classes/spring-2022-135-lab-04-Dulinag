@@ -2,58 +2,62 @@
 #include "tasks.h"
 using namespace std;
 
-std::string box(int a,int b){
+void box(int width,int height ){
 
 
   int i, c;
-  std::string result;
+  ::string result;
 
 
 
 
-  for (i = 1; i <= a; i++){
+  for (i = 1; i <= width; i++){
 
-      result = result + "*";
+      result += "*";
 
-  }
-
-  for (c = 1; c <= b; c++){
-
-    cout<<result<<endl;
 
     }
 
 
+    for (c = 1; c <= height; c++){
 
-return result;
+         cout << result <<  endl;
+
+  }
+
 
 
 }
 
 
 
-std::string checkerboard(int a,int b){
+void checkerboard(int width,int height){
 
 
   int i, c;
-  int t;
 
 
-  std::string result;
+   string result;
 
-  for (i = 1; i <= a; i++){
+  for (i = 1; i <= width; i++){
 
         result = result + "*";
 
   }
 
-  for (c = 1; c <= b; c++){
+  for (c = 1; c <= height; c++){
 
-    cout<<result<<endl;
+    if (c %  2 == 0){
 
-    if (c % 1 == 0){
+       cout <<" " << result <<  endl;
 
-      cout<<" " << result << endl;
+
+    }
+
+    else {
+
+       cout <<result <<  endl;
+
 
     }
 
@@ -62,21 +66,13 @@ std::string checkerboard(int a,int b){
 
 
 
-
-return result;
-
-
 }
 
 
-std::string cross(int a){
-
-
-
-
+void cross(int a){
 
   int i, c;
-  std::string result;
+   string result;
   result += "*";
 
 
@@ -87,7 +83,7 @@ std::string cross(int a){
     for (c = 1; c <= a; c++){
 
       if (c == i || c == (a + 1 - i))
-                cout << result;
+                 cout<<result;
             else
                 cout << " ";
 
@@ -98,16 +94,15 @@ std::string cross(int a){
              }
 
 
-return result;
+
 
 }
 
-std::string lowertriangle(int a){
+void lowertriangle(int a){
 
 
   int i, c;
-  std::string result;
-  result += "*";
+   string result = "*";
 
   for (i = 1; i <= a; i++){
 
@@ -116,15 +111,145 @@ std::string lowertriangle(int a){
       cout << result;
 
 
-  }
+    }
+       cout<< endl;
+
+}
+
+
+
+
+
+
+
+}
+
+
+void uppertriangle(int a){
+
+
+  int i, c, x;
+  string result = "*";
+
+
+  for (i = a; i >= 1; i--){
+
+    for (c = a-i; c > 0; c--)
+
+    cout<<" ";
+
+    for (x = i; x > 0; x--){
+
+      cout<< result;
+    }
+
 
   cout << endl;
 }
 
-
-
-
-return result;
-
-
 }
+
+
+
+void trapezoid (int width, int height){
+
+  int spaces = 0;
+  int stars = width;
+  int i, c, x;
+  string result = "*";
+
+
+   for (i = 0; i < height; i++) {
+
+     spaces += 1;
+     stars -= 2;
+
+   }
+
+   if(stars < 0){
+
+      cout << "Impossible Shape!"<< endl;
+      return;
+   }
+
+   stars = width;
+   spaces = 0;
+
+
+    for (i = 0; i < height; i++){
+
+      for (c = 0; c < width; c++) {
+
+        if(c == spaces){
+
+          for (x = 0; x < stars; x++){
+
+
+             cout << result;
+          }
+
+
+        }
+          else {
+
+             cout << " ";
+          }
+
+
+          }
+          spaces += 1;
+          stars -= 2;
+
+   cout<<endl;
+
+
+      }
+    }
+
+
+
+
+
+void checkerboard3x3(int width, int height){
+
+
+  int stars = 0;
+  int spaces = 0;
+  int i, c, x;
+   string result = "*";
+
+
+   for (i = 0; i < height; i++) {
+
+
+      for (c = 0; c < width; c++) {
+
+        if((c % 6 < 3 && i % 6 < 3)|| (c % 6 >= 3 && i % 6 >= 3)){
+
+          if (stars < 3){
+             cout << "*";
+          }
+          stars = stars + 1;
+          if (stars == 3){
+
+            stars = 0;
+          }
+
+          }
+          else{
+
+            if (spaces < 3){
+            cout << " ";
+            }
+            spaces += 1;
+
+            if (spaces == 3){
+              spaces = 0;
+            }
+        }
+      }
+
+   cout<<"\n";
+
+    }
+  }

@@ -1,6 +1,9 @@
 #pragma once
 
-std::string box(int a,int b);
-std::string checkerboard(int a,int b);
-std::string cross(int a);
-std::string lowertriangle(int a);
+void box(int width,int height);
+void checkerboard(int width,int height);
+void cross(int a);
+void lowertriangle(int a);
+void uppertriangle(int a);
+void trapezoid (int width, int height);
+void checkerboard3x3(int width, int heigth);
